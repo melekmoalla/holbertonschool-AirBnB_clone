@@ -7,9 +7,11 @@ from models.base_model import BaseModel
 class testBase_AirBnB(unittest.TestCase):
 
     def test_save(self):
-        my_model = BaseModel()
-        my_model.save()
-        self.assertEqual(my_model.save(), None)
+        model = BaseModel()
+        updated_at_1 = model.updated_at
+        model.save()
+        updated_at_2 = model.updated_at
+        self.assertLess(updated_at_1, updated_at_2)
 
     def test_to_dict(self):
         my_model = BaseModel()
