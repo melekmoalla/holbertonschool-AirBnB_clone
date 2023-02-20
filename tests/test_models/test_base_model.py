@@ -8,6 +8,7 @@ class testBase_AirBnB(unittest.TestCase):
 
     def test_save(self):
         my_model = BaseModel()
+        my_model.save()
         self.assertEqual(my_model.save(), None)
 
     def test_to_dict(self):
@@ -26,7 +27,7 @@ class testBase_AirBnB(unittest.TestCase):
         my_model = BaseModel()
         self.assertEqual(my_model.created_at, my_model.created_at)
 
-    def test_my_model_created_at(self):
+    def test_str(self):
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
