@@ -58,7 +58,7 @@ class BaseModel:
     format: %Y-%m-%dT%H:%M:%S.%f (ex: 2017-06-14T22:31:03.285259)you can use
     isoformat() of datetime object
     """
-        print(str(self.updated_at))
+        dict = self.__dict__.copy()
         dict["updated_at"] = (self.updated_at.isoformat())
         dict["__class__"] = __class__.__name__
         dict["created_at"] = (self.created_at.isoformat())
