@@ -30,4 +30,5 @@ class testBase_AirBnB(unittest.TestCase):
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
-        self.assertEqual((my_model), (my_model))
+        a = print(my_model)
+        self.assertEqual(a, a)
