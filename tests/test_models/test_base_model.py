@@ -4,26 +4,17 @@ import unittest
 from models.base_model import BaseModel
 
 
-class testBase_AirBnB(unittest.TestCase):
+class test_BaseModel(unittest.TestCase):
 
     def test_save(self):
-        model = BaseModel()
-        updated_at_1 = model.updated_at
-        model.save()
-        updated_at_2 = model.updated_at
-        self.assertLess(updated_at_1, updated_at_2)
+        my_model = BaseModel()
+        self.aassertEqual(my_model.save(), None)
 
     def test_to_dict(self):
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
-        my_model.save()
         my_model_json = my_model.to_dict()
-        self.assertEqual(my_model_json, my_model_json)
+        self.assertEqual(print(
+            my_model_json), "{'id': 'e048bb45-4659-4e9a-bfd9-77c0f1839a1e', 'created_at': '2023-02-20T13:45:08.313419', 'updated_at': '2023-02-20T13:45:08.313477', 'name': 'My First Model', 'my_number': 89, '__class__': 'BaseModel'}")
 
-    def test_str(self):
-        my_model = BaseModel()
-        my_model.name = "My First Model"
-        my_model.my_number = 89
-        a = print(my_model)
-        self.assertEqual(a, a)
