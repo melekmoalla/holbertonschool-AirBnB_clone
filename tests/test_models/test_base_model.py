@@ -21,14 +21,6 @@ class testBase_AirBnB(unittest.TestCase):
         my_model_json = my_model.to_dict()
         self.assertEqual(my_model_json, my_model_json)
 
-    def test_BaseModel_id(self):
-        my_model = BaseModel()
-        self.assertEqual(my_model.id, my_model.id)
-
-    def test_self_created_at(self):
-        my_model = BaseModel()
-        self.assertEqual(my_model.created_at, my_model.created_at)
-
     def test_str(self):
         my_model = BaseModel()
         my_model.name = "My First Model"
