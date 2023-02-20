@@ -20,13 +20,24 @@ class BaseModel:
     *will be updated every time you change your object
     """
 
-    def __init__(self, name="", my_number=0):
+    def __init__(self, name="", my_number=0, *args, **kwargs):
         self.my_number = my_number
         self.name = name
-        self.__class__ = BaseModel
-        self.updated_at = (datetime.datetime.now())
-        self.id = str(uuid.uuid4())
-        self.created_at = (datetime.datetime.now())
+        if (kwargs):
+            for i in kwargs:
+                if i == "created_at":
+                    self.created_at = datetime.datetime.strptime(
+                        (kwargs[i]), '%Y-%m-%dT%H:%M:%S.%f')
+                if i == "updated_at":
+                    self.updated_at = datetime.datetime.strptime(
+                        (kwargs[i]), '%Y-%m-%dT%H:%M:%S.%f')
+                if i == "id":
+                    self.id = kwargs[i]
+
+        else:
+            self.updated_at = (datetime.datetime.now())
+            self.id = str(uuid.uuid4())
+            self.created_at = (datetime.datetime.now())
 
     def __str__(self):
         return (f"[BaseModel] ({self.id}) {self.__dict__}")
@@ -48,7 +59,9 @@ class BaseModel:
     isoformat() of datetime object
     """
         dict = self.__dict__.copy()
-        dict["updated_at"] = str(datetime.datetime.now())
+        print(self.updated_at.isoformat())
+        print(str(self.updated_at))
+        dict["updated_at"] = (self.updated_at.isoformat())
         dict["__class__"] = __class__.__name__
-        dict["created_at"] = str(datetime.datetime.now())
+        dict["created_at"] = (self.created_at.isoformat())
         return (dict)
