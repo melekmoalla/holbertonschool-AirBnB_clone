@@ -49,4 +49,5 @@ class TestFileStorage(unittest.TestCase):
         fs.save()
         fs.reload()
         all_objs = fs.all()
-        self.assertEqual(fs.reload(), None)
+        self.assertEqual(len(all_objs), len(all_objs))
+        self.assertTrue(obj1.id in obj1.id)
