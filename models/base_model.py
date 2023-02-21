@@ -4,6 +4,7 @@ attributes/methods for other classes:
 """
 import uuid
 import datetime
+import models
 
 
 class BaseModel:
@@ -38,6 +39,7 @@ class BaseModel:
             self.updated_at = (datetime.datetime.now())
             self.id = str(uuid.uuid4())
             self.created_at = (datetime.datetime.now())
+            models.storage.new(self)
 
     def __str__(self):
         return (f"[BaseModel] ({self.id}) {self.__dict__}")
@@ -48,6 +50,7 @@ class BaseModel:
         updated_at with the current datetime
         """
         self.updated_at = (datetime.datetime.now())
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -63,3 +66,5 @@ class BaseModel:
         dict["__class__"] = __class__.__name__
         dict["created_at"] = (self.created_at.isoformat())
         return (dict)
+
+        
