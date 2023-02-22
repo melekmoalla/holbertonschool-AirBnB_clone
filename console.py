@@ -69,6 +69,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif args[0] != "BaseModel" and args[0] != 'FileStorage':
             print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
         else:
             z = 0
             dic = {}
@@ -107,10 +109,13 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif (len(args) == 1):
             print("** instance id missing **")
+            return
         elif (len(args) == 2):
             print("** attribute name missing **")
+            return
         elif (len(args) == 3):
             print("** value missing **")
+            return
         else:
             z = 0
             a = storage.all()
@@ -124,6 +129,7 @@ class HBNBCommand(cmd.Cmd):
                     z = 1
             if z == 0:
                 print("** no instance found **")
+                return
         args = arg.split()
         y = storage.all()
         name_class = args[0]
@@ -133,7 +139,6 @@ class HBNBCommand(cmd.Cmd):
         args_name = args[3].split("\"")
         value[args[2]] = str(args_name[1])
         storage.save()
-
 
 
 if __name__ == '__main__':
