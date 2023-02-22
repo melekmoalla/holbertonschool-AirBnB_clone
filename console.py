@@ -6,6 +6,7 @@ import cmd
 from models.engine.file_storage import FileStorage
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -29,11 +30,16 @@ class HBNBCommand(cmd.Cmd):
         if (len(arg) == 0):
             print("** class name missing **")
             return
-        elif arg != "BaseModel" and arg != 'FileStorage':
+        elif arg != "BaseModel" and arg != 'FileStorage' and arg != 'User':
             print("** class doesn't exist **")
             return
         else:
-            m = BaseModel()
+            if (arg == "BaseModel"):
+                m = BaseModel()
+            if (arg == 'User'):
+                m = User()
+            if (arg == 'FileStorage'):
+                m=FileStorage
             m.save()
             print(m.id)
 
@@ -41,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage':
+        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
             print("** class doesn't exist **")
             return
         elif len(args) != 2:
@@ -67,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage':
+        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -97,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
                 m.append(str(a[value]))
             print(m)
             return
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage':
+        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
             print("** class doesn't exist **")
             return
         else:
@@ -112,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
         if (len(arg) == 0):
             print("** class name missing **")
             return
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage':
+        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
             print("** class doesn't exist **")
             return
         elif (len(args) == 1):
