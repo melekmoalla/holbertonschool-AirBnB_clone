@@ -7,13 +7,22 @@ from models.engine.file_storage import FileStorage
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+
+
+lis = {"BaseModel": BaseModel(), 'FileStorage': FileStorage(), "User": User(),
+       'Amenity': Amenity(), 'City': City(), 'Place': Place(), 'Review': Review(), 'State': State()}
 
 
 class HBNBCommand(cmd.Cmd):
     """Command interpreter for HBNB"""
     prompt = '(hbnb) '
 
-    def do_quit(self):
+    def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
 
@@ -27,27 +36,30 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Do nothing on empty line"""
+        ver = 0
         if (len(arg) == 0):
             print("** class name missing **")
             return
-        elif arg != "BaseModel" and arg != 'FileStorage' and arg != 'User':
+        for h in lis:
+            if (h == arg):
+                ver = 1
+                m = lis[h]
+        if (ver == 0):
             print("** class doesn't exist **")
             return
         else:
-            if (arg == "BaseModel"):
-                m = BaseModel()
-            if (arg == 'User'):
-                m = User()
-            if (arg == 'FileStorage'):
-                m=FileStorage
             m.save()
             print(m.id)
 
     def do_show(self, arg):
+        ver = 0
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
+        for h in lis:
+            if (h == args[0]):
+                ver = 1
+        if (ver == 0):
             print("** class doesn't exist **")
             return
         elif len(args) != 2:
@@ -70,11 +82,16 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_destroy(self, arg):
+        ver = 0
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
+        for h in lis:
+            if (h == args[0]):
+                ver = 1
+        if (ver == 0):
             print("** class doesn't exist **")
+            return
         elif len(args) == 1:
             print("** instance id missing **")
         else:
@@ -95,6 +112,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_all(self, arg):
+        ver = 0
         args = arg.split()
         if (len(arg) == 0):
             m = []
@@ -103,7 +121,10 @@ class HBNBCommand(cmd.Cmd):
                 m.append(str(a[value]))
             print(m)
             return
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
+        for h in lis:
+            if (h == args[0]):
+                ver = 1
+        if (ver == 0):
             print("** class doesn't exist **")
             return
         else:
@@ -114,11 +135,15 @@ class HBNBCommand(cmd.Cmd):
             print(m)
 
     def do_update(self, arg):
+        ver = 0
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
             return
-        elif args[0] != "BaseModel" and args[0] != 'FileStorage' and args[0] != 'User':
+        for h in lis:
+            if (h == args[0]):
+                ver = 1
+        if (ver == 0):
             print("** class doesn't exist **")
             return
         elif (len(args) == 1):
