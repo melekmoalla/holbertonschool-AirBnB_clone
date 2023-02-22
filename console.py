@@ -91,7 +91,11 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         args = arg.split()
         if (len(arg) == 0):
-            print("** class name missing **")
+            m = []
+            a = storage.all()
+            for value in a:
+                m.append(str(a[value]))
+            print(m)
             return
         elif args[0] != "BaseModel" and args[0] != 'FileStorage':
             print("** class doesn't exist **")
