@@ -74,7 +74,8 @@ class HBNBCommand(cmd.Cmd):
                 p = s[0].split(".")
                 dic[p[1]] = s
             for b in dic:
-                if (b == args[1]):
+                g = dic[b][0].split(".")
+                if (b == args[1] and g[0] == args[0]):
                     print(all_objs[dic[b][0]])
                     z = 1
             if (z == 0):
