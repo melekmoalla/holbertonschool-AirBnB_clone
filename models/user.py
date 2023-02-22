@@ -11,4 +11,4 @@ class User(BaseModel):
     last_name = ""
 
     def __str__(self):
-        return (f"[user] ({self.id}) {self.__dict__}")
+        return (f"[User] ({self.id}) {self.__dict__}")
