@@ -108,6 +108,7 @@ class HBNBCommand(cmd.Cmd):
             return
         elif args[0] != "BaseModel" and args[0] != 'FileStorage':
             print("** class doesn't exist **")
+            return
         elif (len(args) == 1):
             print("** instance id missing **")
             return
