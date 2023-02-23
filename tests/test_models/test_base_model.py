@@ -46,24 +46,6 @@ class testBase_AirBnB(unittest.TestCase):
         bm.number = 42
 
         # Call the to_dict() method
+        bm.save()
         bm_dict = bm.to_dict()
-
-        # Define the expected output
-        expected_output = {
-            '__class__': 'BaseModel',
-            'id': '123',
-            'name': 'test',
-            'number': 42,
-            'created_at': bm.created_at.isoformat(),
-            'updated_at': bm.updated_at.isoformat()
-        }
-
-    # Compare the dictionary with the expected output
-        self.assertEqual(expected_output, {
-            '__class__': 'BaseModel',
-            'id': '123',
-            'name': 'test',
-            'number': 42,
-            'created_at': bm.created_at.isoformat(),
-            'updated_at': bm.updated_at.isoformat()
-        })
+        "{'my_number': 89, 'name': 'My First Model', 'updated_at': '2023-02-20 14:24:01.871493', 'id': '853d2737-0bc7-4dbe-a403-b3934a3de25c', 'created_at': '2023-02-20 14:24:01.871499', '__class__': 'BaseModel'}"
