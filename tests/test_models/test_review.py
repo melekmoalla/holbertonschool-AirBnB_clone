@@ -2,9 +2,9 @@ import unittest
 from models.review import Review
 
 
-class TestUser(unittest.TestCase):
+class TestReview(unittest.TestCase):
 
-    def test_User(self):
+    def test_review(self):
         my_user2 = Review()
         my_user2.user_id = "mayouka"
         my_user2.name = "John"

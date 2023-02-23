@@ -2,9 +2,9 @@ import unittest
 from models.city import City
 
 
-class TestUser(unittest.TestCase):
+class TestCity(unittest.TestCase):
 
-    def test_User(self):
+    def test_city(self):
         my_user2 = City()
         my_user2.state_id="242424"
         my_user2.name = "John"
