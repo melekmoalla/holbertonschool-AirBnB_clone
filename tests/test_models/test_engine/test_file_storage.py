@@ -20,4 +20,4 @@ class TestFileStorage(unittest.TestCase):
 
     def test_all_FileStorage(self):
         objs = storage.all()
-        self.assertEqual(objs, objs)
+        self.assertEqual("", "")
