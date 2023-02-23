@@ -34,9 +34,8 @@ class TestFileStorage(unittest.TestCase):
             self.assertEqual(content[key]['name'], my_model.name)
 
     def test_reload(self):
-        my_model = BaseModel()
-        my_model.name = "John"
-        my_model.save()
+        model = BaseModel()
+        model.save()
         storage.reload()
-        all_objs = storage.all()
-        self.assertEqual(all_objs,all_objs)
+        m = storage.all()
+        self.assertEqual(m, storage.all())
