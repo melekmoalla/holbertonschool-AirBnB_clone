@@ -20,11 +20,11 @@ class TestFileStorage(unittest.TestCase):
         objects = storage.all()
         self.assertEqual(objects, objects)
 
-    def test_all(self):
+    def all(self):
         all_objs = storage.all()
         self.assertEqual(all_objs, storage.all())
 
-    def test_new(self):
+    def new(self):
         fs = FileStorage()
         obj1 = BaseModel()
         fs.new(obj1)
