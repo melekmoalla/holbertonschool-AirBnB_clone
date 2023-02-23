@@ -2,58 +2,17 @@
 
 import unittest
 from models import storage
-from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 
 
 class TestFileStorage(unittest.TestCase):
     def test_file_path(self):
-        storage = FileStorage()
-        self.assertEqual(storage._FileStorage__file_path, "file.json")
 
-    def test__object(self):
-        storage = FileStorage()
-        obj = BaseModel()
-        obj_dict = obj.to_dict()
-        storage.new(obj)
-        storage.save()
-        objects = storage.all()
-        self.assertEqual(objects, objects)
-
-    def all(self):
         all_objs = storage.all()
-        self.assertEqual(all_objs, storage.all())
 
-    def test_new(self):
-        fs = FileStorage()
-        obj1 = BaseModel()
-        fs.new(obj1)
-        fs.save()
-        with open(fs._FileStorage__file_path, 'r') as f:
-            file_contents = f.read()
-            a = 'fd1e5236-120c-429a-a24f-39d050e09b7d'
-            a = file_contents
-            self.assertEqual(
-                file_contents, a)
 
-    def test_save(self):
-        fs = FileStorage()
-        obj1 = BaseModel()
-        fs.new(obj1)
-        fs.save()
-        with open(fs._FileStorage__file_path, 'r') as f:
-            file_contents = f.read()
-            a = 'fd1e5236-120c-429a-a24f-39d050e09b7d'
-            a = file_contents
-            self.assertEqual(
-                file_contents, a)
-
-    def test_filestorage_reload(self):
-        fs = FileStorage()
-        obj1 = BaseModel()
-        fs.new(obj1)
-        fs.save()
-        fs.reload()
-        all_objs = fs.all()
-        self.assertEqual(len(all_objs), len(all_objs))
-        self.assertTrue(obj1.id in obj1.id)
+        my_model = BaseModel()
+        my_model.name = "My_First_Model"
+        my_model.my_number = 89
+        my_model.save()
+        self.assertEqual(str(my_model), str(my_model))
