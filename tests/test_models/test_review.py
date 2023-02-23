@@ -13,4 +13,6 @@ class TestReview(unittest.TestCase):
         self.assertEqual(str(my_user2), str(my_user2))
 
     def test_all(self):
-        self.assertEqual(Review, Review)
+        self.assertEqual(Review.place_id, "")
+        self.assertEqual(Review.user_id, "")
+        self.assertEqual(Review.text, "")
