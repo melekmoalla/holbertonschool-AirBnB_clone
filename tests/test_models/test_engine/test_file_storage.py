@@ -33,5 +33,5 @@ class TestFileStorage(unittest.TestCase):
         with open('file.json', 'r') as f:
             content = json.load(f)
             key = "{}.{}".format(type(my_model).__name__, my_model.id)
-            self.assertEqual(my_model.name, my_model.name)
+            self.assertEqual(content[key]['name'], my_model.name)
 
