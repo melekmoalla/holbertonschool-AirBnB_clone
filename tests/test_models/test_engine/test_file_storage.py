@@ -9,6 +9,16 @@ import json
 
 class TestFileStorage(unittest.TestCase):
 
+    def test_FileStorage(self):
+
+        all_objs = storage.all()
+
+        my_model = BaseModel()
+        my_model.name = "My_First_Model"
+        my_model.my_number = 89
+        my_model.save()
+        all_objs = storage.all()
+        self.assertEqual(all_objs, all_objs)
 
     def test_save(self):
         my_model = BaseModel()
@@ -21,4 +31,8 @@ class TestFileStorage(unittest.TestCase):
             key = "{}.{}".format(type(my_model).__name__, my_model.id)
             self.assertEqual(content[key]['name'], my_model.name)
 
-
+    def test_reload(self):
+        model = BaseModel()
+        storage.reload()
+        m = storage.all()
+        self.assertEqual(m, m)
