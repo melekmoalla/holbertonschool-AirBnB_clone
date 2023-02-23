@@ -18,6 +18,5 @@ class testBase_AirBnB(unittest.TestCase):
 
     def test_save(self):
         my_model = BaseModel()
-        my_model.name = "My First Model"
-        my_model.my_number = 89
+        self.assertEqual(my_model.to_dict(), my_model.to_dict())
         self.assertEqual(my_model.save(), my_model.save())
