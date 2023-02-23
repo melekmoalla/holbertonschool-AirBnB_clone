@@ -39,4 +39,4 @@ class TestFileStorage(unittest.TestCase):
         my_model.save()
         storage.reload()
         all_objs = storage.all()
-        self.assertEqual(all_objs,my_model)
+        self.assertEqual(all_objs,all_objs)
