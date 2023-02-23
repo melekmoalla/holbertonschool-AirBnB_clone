@@ -22,8 +22,11 @@ class testBase_AirBnB(unittest.TestCase):
         my_model.my_number = 89
         self.assertEqual(print(my_model), print(my_model))
         my_model.save()
-        self.assertEqual(print(my_model), print(my_model))
+        self.assertEqual(str(my_model), str(my_model))
         my_model_json = my_model.to_dict()
+        print(my_model_json)
+        self.assertEqual(
+            str(my_model_json), "{'my_number': 89, 'name': 'My First Model', 'updated_at': '2023-02-23T19: 56: 31.436968', 'id': 'e23b2f5d-725e-499f-ba35-90af20ec966b', 'created_at': '2023-02-23T19: 56: 31.436876', '__class__': 'BaseModel'}")
         print(my_model_json)
 
     def test_str(self):
