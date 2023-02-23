@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 
 class testBase_AirBnB(unittest.TestCase):
 
-    def test_to_dict(self):
+    def test_to_id(self):
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
@@ -34,3 +34,7 @@ class testBase_AirBnB(unittest.TestCase):
         expected_str = "[BaseModel] ({}) {}".format(
             base_model.id, base_model.__dict__)
         self.assertEqual(str(base_model), expected_str)
+
+    def test_to_dict(self):
+        base_model = BaseModel()
+        self.assertEqual(base_model.to_dict(), base_model.to_dict())
