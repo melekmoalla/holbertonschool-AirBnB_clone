@@ -16,7 +16,8 @@ from models.base_model import BaseModel
 
 
 class FileStorage:
-    """Serializes instances to a JSON file and deserializes JSON file to instances"""
+    """Serializes instances to a JSON file and deserializes
+    JSON file to instances"""
 
     __file_path = "file.json"
     __objects = {}
@@ -41,9 +42,10 @@ class FileStorage:
             with open(self.__file_path, 'r') as f:
                 obj_dict = json.load(f)
             for key, value in obj_dict.items():
-                    class_name = value['__class__']
-                    del value['__class__']
-                    obj = eval(class_name)(**value)
-                    self.__objects[key] = obj
+                class_name = value['__class__']
+                del value['__class__']
+                obj = eval(class_name)(**value)
+                self.__objects[key] = obj
+
         except BaseException:
             pass
