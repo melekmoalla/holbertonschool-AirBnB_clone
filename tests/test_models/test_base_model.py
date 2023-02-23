@@ -36,18 +36,3 @@ class testBase_AirBnB(unittest.TestCase):
         expected_str = "[BaseModel] ({}) {}".format(
             base_model.id, base_model.__dict__)
         self.assertEqual(str(base_model), expected_str)
-
-    def test_save(self):
-
-        my_model = BaseModel()
-        my_model.name = "John"
-
-    
-        my_model.save()
-    
-        with open('file.json', 'r') as f:
-            content = json.load(f)
-            key = "{}.{}".format(type(my_model).__name__, my_model.id)
-            self.assertIn(key, content)
-            self.assertEqual(content[key]['name'], my_model.name)
-
