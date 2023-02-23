@@ -11,3 +11,6 @@ class TestReview(unittest.TestCase):
         my_user2.text = "work hard"
         my_user2.save()
         self.assertEqual(str(my_user2), str(my_user2))
+
+    def test_all(self):
+        self.assertEqual(Review, Review)
