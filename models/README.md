@@ -20,6 +20,8 @@ This module defines the BaseModel class, which is the parent class for all other
     * Returns a string representation of the object.
 * __repr__(self) -> str
     * Returns a string representation of the object, used for debugging purposes.
+* save(self) -> None
+    * Updates the updated_at attribute with the current datetime and saves the instance in the storage (a JSON file) using the FileStorage class.
 
 * to_dict(self) -> dict
     * Returns a dictionary representation of the instance, with all attributes and their values.
