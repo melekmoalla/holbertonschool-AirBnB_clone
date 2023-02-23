@@ -20,3 +20,8 @@ class testBase_AirBnB(unittest.TestCase):
         my_model = BaseModel()
         self.assertEqual(my_model.to_dict(), my_model.to_dict())
         self.assertEqual(my_model.save(), my_model.save())
+
+    def test_str(self):
+        base_model = BaseModel()
+        expected_str = "[BaseModel] ({}) {}".format(base_model.id, base_model.__dict__)
+        self.assertEqual(str(base_model), expected_str)
