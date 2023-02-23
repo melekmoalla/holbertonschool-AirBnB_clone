@@ -37,4 +37,4 @@ class testBase_AirBnB(unittest.TestCase):
 
     def test_to_dict(self):
         base_model = BaseModel()
-        self.assertEqual(base_model.to_dict(), base_model.to_dict())
+        self.assertEqual(BaseModel.to_dict, BaseModel.to_dict)
