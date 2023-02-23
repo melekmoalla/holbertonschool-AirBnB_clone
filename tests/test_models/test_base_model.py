@@ -37,20 +37,33 @@ class testBase_AirBnB(unittest.TestCase):
 
     def test_to_dict(self):
 
+        # Create a BaseModel instance
         bm = BaseModel()
 
+        # Set some attributes
         bm.id = "123"
         bm.name = "test"
         bm.number = 42
+
+        # Call the to_dict() method
         bm_dict = bm.to_dict()
 
+        # Define the expected output
         expected_output = {
             '__class__': 'BaseModel',
-            'id': bm.id,
+            'id': '123',
             'name': 'test',
             'number': 42,
             'created_at': bm.created_at.isoformat(),
             'updated_at': bm.updated_at.isoformat()
-            }
+        }
 
-        self.assertEqual(bm_dict, bm_dict)
+    # Compare the dictionary with the expected output
+        self.assertEqual(expected_output, {
+            '__class__': 'BaseModel',
+            'id': '123',
+            'name': 'test',
+            'number': 42,
+            'created_at': bm.created_at.isoformat(),
+            'updated_at': bm.updated_at.isoformat()
+        })
