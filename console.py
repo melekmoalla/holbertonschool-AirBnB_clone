@@ -15,7 +15,8 @@ from models.state import State
 
 
 lis = {"BaseModel": BaseModel(), 'FileStorage': FileStorage(), "User": User(),
-       'Amenity': Amenity(), 'City': City(), 'Place': Place(), 'Review': Review(), 'State': State()}
+       'Amenity': Amenity(), 'City': City(), 'Place': Place(),
+       'Review': Review(), 'State': State()}
 
 
 class HBNBCommand(cmd.Cmd):
