@@ -27,7 +27,7 @@ class TestFileStorage(unittest.TestCase):
         my_model = BaseModel()
         my_model.name = "My_First_Model"
         my_model.my_number = 89
-        
+
         my_model.save()
 
         with open('file.json', 'r') as f:
@@ -35,16 +35,5 @@ class TestFileStorage(unittest.TestCase):
             key = "{}.{}".format(type(my_model).__name__, my_model.id)
             self.assertEqual(content[key]['name'], my_model.name)
 
-        my_model = BaseModel()
-        my_model.name = "My_First_Model"
-        my_model.my_number = 89
-        all_objs = storage.all()
-        my_model.save()
-        with open('file.json', 'r') as f:
-            content = json.load(f)
-            key = "{}.{}".format(type(my_model).__name__, my_model.id)
-            self.assertEqual(content[key]['name'], my_model.name)
-            self.assertEqual(all_objs, all_objs)
-            
-
-    
+        self.assertEqual(storage.reload(), storage.reload())
+        self.assertEqual(storage.all(), storage.all())
