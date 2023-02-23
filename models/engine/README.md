@@ -38,3 +38,20 @@ This class is not intended to be used by the user directly, but through the clas
 The all, new, save, and reload methods are meant to be used internally by the BaseModel and other classes that derive from it.
 
 The FileStorage class is used to create an instance of itself and create an instance of the BaseModel class. The methods of the FileStorage class are used to store and retrieve the object to/from the JSON file.
+# the importance in this project
+
+Serialization and Deserialization flow:
+In this project, serialization and deserialization are used to store the data in a JSON file and to retrieve the data from the JSON file. The data is first stored in an object, which is then converted into a dictionary using the to_dict() method. This dictionary is then converted into a JSON string using the json.dumps() method and written to a file using the File I/O operations. When the data needs to be retrieved from the JSON file, the JSON string is first read from the file and then converted into a dictionary using the json.loads() method. This dictionary is then used to create an object using the class constructor.
+
+Packages / Modules / Cyclical imports / How to import / Prevent execution /Etc.:
+The project is divided into several modules, each of which contains a set of related classes and functions. The main module is console.py, which is the command interpreter that interacts with the user. Other modules include models, engines, and tests. To prevent cyclic imports, the imports are done within the functions rather than at the top of the module. To import a module, the import statement is used followed by the name of the module. To import a specific class or function from a module, the from statement is used followed by the name of the module and the name of the class or function. To prevent execution when importing a module, the if name == 'main': statement is used at the bottom of the module.
+
+Layered architecture:
+The project follows a layered architecture, which is a design pattern that separates the concerns of the different components of the system into distinct layers. The layers include the presentation layer, the application layer, and the data layer. The presentation layer is the console.py module, which is responsible for interacting with the user. The application layer includes the models and engines modules, which are responsible for implementing the business logic of the system. The data layer includes the file_storage.py module, which is responsible for storing and retrieving the data from the JSON file.
+
+Interfaces (storage):
+The file_storage.py module provides an interface for storing and retrieving data from the JSON file. The interface includes the methods all(), new(), save(), reload(), delete(), and update(), which are used to retrieve all the objects, create a new object, save the objects to the file, reload the objects from the file, delete an object, and update an object respectively. This interface allows the other modules to interact with the data layer without having to know the implementation details.
+
+## Author
+
+*  https://github.com/melekmoalla

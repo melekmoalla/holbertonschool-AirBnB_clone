@@ -98,3 +98,78 @@ You can also test file by file by using this command: python3 -m unittest tests/
 
 <a href="https://ibb.co/qmm1sSb"><img src="https://i.ibb.co/P11ChLB/Screenshot-2023-02-23-114130.png" alt="Screenshot-2023-02-23-114130" border="0"></a>
 <a href="https://ibb.co/PQ5ZhJ3"><img src="https://i.ibb.co/py3vzNG/Screenshot-2023-02-23-114150.png" alt="Screenshot-2023-02-23-114150" border="0"></a>
+
+# AirBnB Clone Project to give detail
+
+This project is an implementation of a command-line interface that emulates the functionalities of the AirBnB platform.
+
+The main goal of this project is to provide an easy way to manage data models, using a persistent storage system, a JSON file.
+
+The project has the following modules:
+
+models: This module contains the classes for the different data models used in the project (User, Place, Review, City, Amenity, and State).
+tests: This module contains the unit tests for the models and the console.
+engine: This module contains the FileStorage class used to manage the JSON file.
+
+# How to start it
+To start the command interpreter, run the following command:
+````
+./console.py
+````
+# You will see a prompt like this one:
+````
+(hbnb)
+````
+# How to use it
+
+The command interpreter provides the following commands:
+
+* create: Creates a new instance of a class, saves it to the JSON file, and prints its id.
+* show: Prints the string representation of an instance based on the class name and id.
+* destroy: Deletes an instance based on the class name and id and saves the change into the JSON file.
+* all: Prints all string representation of all instances based or not on the class name.
+* update: Updates an instance based on the class name and id by adding or updating attribute and saves the change into the JSON file.
+* quit or EOF: Exits the command interpreter.
+* help: Shows the documentation of the commands.
+
+To get more information about a command, type help followed by the command name.
+
+# Examples
+
+To create a new User instance:
+````
+(hbnb) create User
+````
+To show the User instance with id 1234-1234-1234:
+````
+(hbnb) show User 1234-1234-1234
+````
+To destroy the User instance with id 1234-1234-1234:
+````
+(hbnb) destroy User 1234-1234-1234
+````
+To show all instances of the User class:
+````
+(hbnb) all User
+````
+To update the email attribute of the User instance with id 1234-1234-1234:
+````
+(hbnb) update User 1234-1234-1234 email "aibnb@mail.com"
+````
+# Requirements
+The project has been developed using Python 3.4.3.
+
+There are no additional requirements needed to run the command interpreter.
+# Testing
+To run the tests, execute the following command:
+````
+python3 -m unittest discover tests
+````
+Or if you prefer to see the verbose output:
+````
+python3 -m unittest discover -v tests
+````
+
+ ## Author
+
+*  https://github.com/melekmoalla
