@@ -9,5 +9,6 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
+
     def __str__(self):
         return (f"[Review] ({self.id}) {self.__dict__}")
