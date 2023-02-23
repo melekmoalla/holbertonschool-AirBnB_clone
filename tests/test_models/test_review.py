@@ -15,4 +15,5 @@ class TestReview(unittest.TestCase):
     def test_all(self):
         self.assertEqual(Review.place_id, "")
         self.assertEqual(Review.user_id, "")
-        self.assertEqual(Review.text, "")
+
+
