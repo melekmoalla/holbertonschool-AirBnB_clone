@@ -10,4 +10,5 @@ class TestState(unittest.TestCase):
         my_user2.save()
         self.assertEqual(str(my_user2), str(my_user2))
 
-    
+    def test_name(self):
+        self.assertEqual(State.name, "")
