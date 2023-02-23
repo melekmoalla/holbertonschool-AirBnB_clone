@@ -19,4 +19,5 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(str(my_model), str(my_model))
 
     def test_all_FileStorage(self):
-        self.assertEqual(storage.all(), storage.all())
+        mayouka = FileStorage()
+        self.assertEqual(mayouka.all(), mayouka.all())
