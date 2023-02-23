@@ -11,3 +11,7 @@ class TestUser(unittest.TestCase):
         my_user2.save()
         self.assertEqual(my_user2, my_user2)
 
+    def test_email(self):
+        u = User()
+        u.email = "test@example.com"
+        self.assertEqual(u.email, "test@example.com")
