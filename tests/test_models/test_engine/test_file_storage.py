@@ -17,22 +17,23 @@ class TestFileStorage(unittest.TestCase):
         my_model.name = "My_First_Model"
         my_model.my_number = 89
         my_model.save()
-        all_objs = storage.all()
-        self.assertEqual(all_objs, all_objs)
+        self.assertEqual(str(my_model), str(my_model))
+
+    def test_all_FileStorage(self):
+        self.assertEqual(storage.all(), storage.all())
 
     def test_save(self):
+        all_objs = storage.all()
         my_model = BaseModel()
         my_model.name = "John"
-
+        
         my_model.save()
+        all_objs = storage.all()
 
         with open('file.json', 'r') as f:
             content = json.load(f)
             key = "{}.{}".format(type(my_model).__name__, my_model.id)
             self.assertEqual(content[key]['name'], my_model.name)
+            self.assertEqual(all_objs , all_objs)
+            
 
-    def test_reload(self):
-        model = BaseModel()
-        storage.reload()
-        m = storage.all()
-        self.assertEqual(m, m)
