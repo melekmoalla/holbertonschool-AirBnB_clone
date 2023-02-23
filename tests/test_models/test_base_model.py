@@ -2,7 +2,7 @@
 
 import unittest
 from models.base_model import BaseModel
-
+import json
 
 class testBase_AirBnB(unittest.TestCase):
 
@@ -35,17 +35,17 @@ class testBase_AirBnB(unittest.TestCase):
             base_model.id, base_model.__dict__)
         self.assertEqual(str(base_model), expected_str)
 
-    def test_to_dict(self):
+def test_save(self):
 
-        # Create a BaseModel instance
-        bm = BaseModel()
-
-        # Set some attributes
-        bm.id = "123"
-        bm.name = "test"
-        bm.number = 42
-
-        # Call the to_dict() method
-        bm.save()
-        bm_dict = bm.to_dict()
-        "{'my_number': 89, 'name': 'My First Model', 'updated_at': '2023-02-20 14:24:01.871493', 'id': '853d2737-0bc7-4dbe-a403-b3934a3de25c', 'created_at': '2023-02-20 14:24:01.871499', '__class__': 'BaseModel'}"
+    my_model = BaseModel()
+    my_model.name = "John"
+    my_model.age = 30
+    
+    my_model.save()
+    
+    with open('file.json', 'r') as f:
+        content = json.load(f)
+        key = "{}.{}".format(type(my_model).__name__, my_model.id)
+        self.assertIn(key, content)
+        self.assertEqual(content[key]['name'], my_model.name)
+        self.assertEqual(content[key]['age'], my_model.age)
