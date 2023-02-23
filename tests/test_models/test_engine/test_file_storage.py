@@ -37,7 +37,7 @@ class TestFileStorage(unittest.TestCase):
             self.assertEqual(all_objs , all_objs)
             
 
-        def test_filestorage_all(self):
+    def test_filestorage_all(self):
             storage = FileStorage()
             obj1 = BaseModel()
             obj1.save()
