@@ -18,10 +18,16 @@ class testBase_AirBnB(unittest.TestCase):
 
     def test_save(self):
         my_model = BaseModel()
-        self.assertEqual(my_model.to_dict(), my_model.to_dict())
-        self.assertEqual(my_model.save(), my_model.save())
+        my_model.name = "My First Model"
+        my_model.my_number = 89
+        self.assertEqual(print(my_model), print(my_model))
+        my_model.save()
+        self.assertEqual(print(my_model), print(my_model))
+        my_model_json = my_model.to_dict()
+        print(my_model_json)
 
     def test_str(self):
         base_model = BaseModel()
-        expected_str = "[BaseModel] ({}) {}".format(base_model.id, base_model.__dict__)
+        expected_str = "[BaseModel] ({}) {}".format(
+            base_model.id, base_model.__dict__)
         self.assertEqual(str(base_model), expected_str)
