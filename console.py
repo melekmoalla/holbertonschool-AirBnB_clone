@@ -57,6 +57,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
+            return
         for h in lis:
             if (h == args[0]):
                 ver = 1
@@ -88,6 +89,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if (len(arg) == 0):
             print("** class name missing **")
+            return
         for h in lis:
             if (h == args[0]):
                 ver = 1
