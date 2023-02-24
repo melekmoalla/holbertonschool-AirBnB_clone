@@ -4,6 +4,8 @@ from models import storage
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 import json
+
+
 class TestFileStorage(unittest.TestCase):
     def test_FileStorage(self):
         all_objs = storage.all()
@@ -12,8 +14,10 @@ class TestFileStorage(unittest.TestCase):
         my_model.my_number = 89
         my_model.save()
         self.assertEqual(str(my_model), str(my_model))
+
     def test_all_FileStorage(self):
         self.assertEqual(storage.all(), storage.all())
+
     def test_save(self):
         my_model = BaseModel()
         my_model.name = "John"
@@ -31,3 +35,6 @@ class TestFileStorage(unittest.TestCase):
         my_model.name = "John"
         my_model.save()
         self.assertEqual(all_objs.reload(), None)
+
+    def test_all(self):
+        self.assertEqual(type(storage.all()), dict)
