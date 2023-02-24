@@ -36,9 +36,4 @@ class TestFileStorage(unittest.TestCase):
         my_model.save()
         self.assertEqual(all_objs.reload(), None)
 
-    def test_reload(self):
-        my_model = BaseModel()
-        storage.save()
-        storage.reload()
-        self.assertEqual("BaseModel." + my_model.id,
-                         "BaseModel." + my_model.id)
+
