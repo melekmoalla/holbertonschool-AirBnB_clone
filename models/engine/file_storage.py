@@ -1,14 +1,7 @@
 #!/usr/bin/python3
+
 """ File Storage module
 
-        try:
-            with open(self.__file_path, 'r') as f:
-                obj_dict = json.loads(f.read())
-            for k, v in obj_dict.items():
-                class_name, id = k.split('.')
-                self.__objects[k] = eval(class_name)(**v)
-        except BaseException:
-            pass
 """
 import json
 import os
@@ -46,6 +39,5 @@ class FileStorage:
                 del value['__class__']
                 obj = eval(class_name)(**value)
                 self.__objects[key] = obj
-
         except BaseException:
             pass
