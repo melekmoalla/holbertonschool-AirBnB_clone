@@ -1,9 +1,7 @@
-<div align=center>  
-    <img  
-    style="text-align:center"  
-    src="https://raw.githubusercontent.com/coding-max/hbtn_config/main/assets/head_low-level.png"  
-    alt="Holberton School"/>  
-</div>
+<p align="center">
+<a target="_blank" href="https://www.holbertonschool.com/"><img src="https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/holby.jpg?raw=true"></a>
+</p>
+
 
 # File Storage
 
