@@ -1,0 +1,13 @@
+footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+}
+
+.holberton {
+    text-align: center;
+    color: black;
+}
