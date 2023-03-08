@@ -1,0 +1,172 @@
+.max_guest{
+
+    background-image: url(../images/icon_group.png);
+    background-color: #ffffff;
+    top: 330px;
+    right: 810px;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    height: 45px;
+    margin-top:5px
+}
+
+.number_rooms{
+
+    background-image: url(../images/icon_bed.png);
+    background-color: #ffffff;
+    top: 330px;
+    left: 90px;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    height: 45px;
+    margin-top:5px
+}
+
+.number_bathrooms{
+    background-image: url(../images/icon_bath.png);
+    background-color: #ffffff;
+    top: 330px;
+    right: 710px;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    height: 45px;
+    margin-top:5px
+}
+
+.places{
+    position: absolute;
+    border-radius: 4px;
+    border: 1px solid #ff0000 ;
+    top:210px;
+    width: 400px;
+    height: 420px;
+    font-size: 30px;
+}
+
+.user{
+    text-decoration-line: underline;
+    white-space: nowrap;
+    margin: 20px;
+    margin-top:200px
+}
+
+.place1{
+    text-align: center;
+}
+.h{
+
+    margin-left: 0px;
+    margin-top: 280px;
+    width: 350px;
+}
+.hh2{
+    margin-top: -19px;
+    margin-left: 14px;
+    width: 360px;
+    
+}
+
+.name3{
+    position: absolute;
+    margin-top: 50px;
+    width: 100px;
+}
+
+.name1{
+    position: absolute;
+    margin-top: 50px;
+    width: 100px;
+    left: -20px;
+}
+.name2{
+    position: absolute;
+    margin-top: 50px;
+    width: 100px;
+    left: -20px;
+}
+
+.description{
+    padding-left: 1.5%;
+
+}
+
+.information2{
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid  #ff0000;
+    margin-top: 50px;
+    height: 430px;
+    width: 350px;
+    padding-left: 20px;
+    padding-right: 30px;
+    left:550px;
+    top: -420px;
+}
+
+.hh3{
+    width: 360px;
+}
+.hhh2{
+    width: 360px
+}
+
+.buisnessman{
+    text-align: center;
+    font-size: 40px;
+}
+
+.max_guest1{
+    background-image: url(../images/icon_group.png);
+    background-color: #ffffff;
+    position: relative;
+    left: 150px;
+    width: 50px;
+    height: 50px;
+}
+
+.number_rooms1{
+    background-image: url(../images/icon_bed.png);
+    background-color: #ffffff;
+    position: relative;
+    top: -50px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.number_bathrooms1{
+    background-image: url(../images/icon_bath.png);
+    background-color: #ffffff;
+    position: relative;
+    top:-100px;
+    left: 250px;
+    width: 50px;
+    height: 50px;
+}
+.user1{
+    position: relative;
+    top:-70px
+}
+
+.name11{
+    position: absolute;
+    top: 55px;
+    width: 100px;
+}
+
+.name12{
+    position:absolute;
+    top: 55px;
+    width: 100px;
+}
+
+.name13{
+    position:absolute;
+    top: 55px;
+    width: 100px;
+}
+
+
